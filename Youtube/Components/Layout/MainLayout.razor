@@ -1,17 +1,54 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<MudThemeProvider Theme="@_theme"/>
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<div class="p-2">
+    <MudAppBar Fixed="true" Elevation="4">
+        <MudImage Height="35" Width="35" Src="@ImageResources.Youtube" />
+        <MudText>Youtube</MudText>
+        <MudItem Class="d-flex justify-content-end w-100 gap-4">
+            <MudImage Height="25" Width="25" Src="@ImageResources.Cast" />
+            <MudImage Height="25" Width="25" Src="@ImageResources.Notification" />
+            <MudImage Height="25" Width="25" Src="@ImageResources.Search" />
+            <MudImage Height="25" Width="25" Src="@ImageResources.Profile" Style="border-radius:50%"/>
+        </MudItem>
+    </MudAppBar>
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+        <MudItem Class="py-15 px-4">
             @Body
-        </article>
+        </MudItem>
     </main>
+
+    <MudAppBar Bottom="true" Fixed="true" Elevation="4" Class="p-1">
+        <MudItem Class="d-flex justify-content-around w-100">
+            <MudItem Class="d-flex justify-content-around" Style="width:40%">
+                <MudItem Class="d-flex flex-column align-items-center">
+                    <MudImage Height="25" Width="25" Src="@ImageResources.Home" />
+                    <MudText Class="text-black">Home</MudText>
+                </MudItem>
+                <MudItem Class="d-flex flex-column align-items-center">
+                    <MudImage Height="25" Width="25" Src="@ImageResources.Shorts" />
+                    <MudText Class="text-black">Shorts</MudText>
+                </MudItem>
+            </MudItem>
+
+            <MudItem Class="d-flex justify-content-center">
+                <MudImage Height="40" Width="40" Src="@ImageResources.Add" />
+            </MudItem>
+
+            <MudItem Class="d-flex justify-content-around" Style="width:40%">
+                <MudItem Class="d-flex flex-column align-items-center">
+                    <MudImage Height="25" Width="25" Src="@ImageResources.Subcription" />
+                    <MudText Class="text-black">Subcriptions</MudText>
+                </MudItem>
+                <MudItem Class="d-flex flex-column align-items-center">
+                    <MudImage Height="25" Width="25" Src="@ImageResources.Library" />
+                    <MudText Class="text-black">Library</MudText>
+                </MudItem>
+            </MudItem>
+        </MudItem>
+    </MudAppBar>
 </div>

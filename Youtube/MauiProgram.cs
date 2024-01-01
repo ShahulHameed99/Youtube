@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 
+using MudBlazor.Services;
+
 namespace Youtube
 {
     public static class MauiProgram
@@ -17,9 +19,10 @@ namespace Youtube
             builder.Services.AddMauiBlazorWebView();
 
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
-    		builder.Logging.AddDebug();
+            builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Logging.AddDebug();
 #endif
+            builder.Services.AddMudServices();
 
             return builder.Build();
         }
